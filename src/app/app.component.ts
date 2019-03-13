@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal } from './interface/animal.interface';
+import { Router } from '@angular/router';
+import { MenuItem } from './interface/menuItem.interface';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +15,22 @@ export class AppComponent implements OnInit {
   // 1 -> dog,
   // 2 -> cat,
   // 3 -> rabbit
+
+
+  menuItems: MenuItem[] = [
+    {
+      displayText: "Dogs",
+      link: "dog/list"
+    },
+    {
+      displayText: "Cats",
+      link: "cat/list"
+    },
+    {
+      displayText: "Rabbits",
+      link: "rabbit/list"
+    }
+  ]
 
 
   animals: Animal[] = [
@@ -43,7 +61,9 @@ export class AppComponent implements OnInit {
   rabbitCount: number = 0;
 
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
 
   ngOnInit() {
@@ -60,6 +80,20 @@ export class AppComponent implements OnInit {
 
   animalWanToTalk(text: string) {
     alert(text);
+  }
+
+  goToDogListPage(id) {
+    console.log('-----> goToDogListPage');
+
+    // when you already have the url
+    // this.router.navigateByUrl("/dog/list");
+
+    // compose the route with different params
+    this.router.navigate(["dog", "list"]);
+  }
+
+  goToPage(url: string) {
+    this.router.navigateByUrl(url);
   }
 
 }

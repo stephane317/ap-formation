@@ -3,8 +3,26 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-
 </div>
+
+<ul>
+  <!-- Simple Routerlink for links -->
+  <!-- <li routerLink="dog/list">Dog list</li> -->
+
+  <!-- Routerlink input mode -->
+  <!-- <a [routerLink]="[ '/dog/list' ]">name</a> -->
+
+  <!-- Simple naviguate page -->
+  <!-- <li (click)="goToDogListPage()">Dog list</li> -->
+
+  <!-- Generic router management -->
+  <!-- <li (click)="goToPage('/dog/list')">Dog List</li> -->
+
+  <li *ngFor="let currentItem of menuItems" [routerLink]="currentItem.link">
+    {{currentItem.displayText}}
+  </li>
+
+</ul>
 
 
 <div>
