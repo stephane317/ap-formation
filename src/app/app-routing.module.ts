@@ -5,6 +5,8 @@ import { TestPageComponent } from './page/test-page/test-page.component';
 import { DogListPageComponent } from './page/dog/dog-list-page/dog-list-page.component';
 import { CatListPageComponent } from './page/cat/cat-list-page/cat-list-page.component';
 import { RabbitListPageComponent } from './page/rabbit/rabbit-list-page/rabbit-list-page.component';
+import { CatCreatePageComponent } from './page/cat/cat-create-page/cat-create-page.component';
+import { CatUpdatePageComponent } from './page/cat/cat-update-page/cat-update-page.component';
 
 
 // more precise 
@@ -14,6 +16,8 @@ import { RabbitListPageComponent } from './page/rabbit/rabbit-list-page/rabbit-l
 const routes: Routes = [
   { path: "dog/list", component: DogListPageComponent },
   { path: "cat/list", component: CatListPageComponent },
+  { path: "cat/create", component: CatCreatePageComponent },
+  { path: "cat/update/:toto", component: CatUpdatePageComponent },
   { path: "rabbit/list", component: RabbitListPageComponent },
   {
     path: 'animals/list',

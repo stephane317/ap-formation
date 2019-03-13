@@ -1,3 +1,4 @@
-<p>
-  cat-list-page works!
-</p>
+<h1>Cat list page title</h1>
+<button routerLink="/cat/create">Create cat</button>
+
+<app-cat-card *ngFor="let item of cats" [cat]="item"></app-cat-card>

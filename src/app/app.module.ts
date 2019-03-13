@@ -11,6 +11,9 @@ import { TestPageComponent } from './page/test-page/test-page.component';
 import { DogListPageComponent } from './page/dog/dog-list-page/dog-list-page.component';
 import { CatListPageComponent } from './page/cat/cat-list-page/cat-list-page.component';
 import { RabbitListPageComponent } from './page/rabbit/rabbit-list-page/rabbit-list-page.component';
+import { CatCreatePageComponent } from './page/cat/cat-create-page/cat-create-page.component';
+import { CatUpdatePageComponent } from './page/cat/cat-update-page/cat-update-page.component';
+import { CatEditionComponent } from './components/cat-edition/cat-edition.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { RabbitListPageComponent } from './page/rabbit/rabbit-list-page/rabbit-l
     TestPageComponent,
     DogListPageComponent,
     CatListPageComponent,
-    RabbitListPageComponent
+    RabbitListPageComponent,
+    CatCreatePageComponent,
+    CatUpdatePageComponent,
+    CatEditionComponent
   ],
   imports: [
     BrowserModule,

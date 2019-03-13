@@ -1,6 +1,7 @@
 export interface Animal {
     name: string;
     breed: string;
-    type: number;
+    type?: number;
     talk: string;
+    id?: number;
 }

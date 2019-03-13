@@ -8,6 +8,9 @@
 
 <button (click)="wantToTalk()">Talk</button>
 
+<!-- create an output to redirect to the edit cat -->
+<button [routerLink]="['/cat/update', cat.id]">Editer cat</button>
+
 
 <!-- name: string;
     breed: string;
