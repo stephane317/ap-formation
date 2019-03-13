@@ -14,8 +14,8 @@
   {{rabbitCount}} rabbits.
 </div>
 
-
-<div>
+<router-outlet></router-outlet>
+<!-- <div>
   <h2>Card animals with NGIF</h2>
   <div *ngFor="let animal of animals">
     <app-dog-card (talkEvent)="animalWanToTalk($event)" [dog]="animal" *ngIf="animal.type == 1"></app-dog-card>
@@ -34,4 +34,4 @@
       what the hell is that animal !
     </p>
   </div>
-</div>
+</div> -->
