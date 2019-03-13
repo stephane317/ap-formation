@@ -1,3 +1,12 @@
-<!-- <form [formGroup]="">
-  <input type="text" placeholder="Name" formControlName="">
-</form> -->
+<form [formGroup]="catForm">
+  <input type="text" placeholder="Name" formControlName="name">
+  <input type="text" placeholder="Name" formControlName="name1">
+  <input type="text" placeholder="Name" formControlName="name2">
+  <input type="text" placeholder="Name" formControlName="name3">
+</form>
+
+<input type="text" placeholder="Name" [formControl]="catNameControl">
+
+
+<button (click)="getInput()">Value input</button>
+<button (click)="reset()">reset</button>

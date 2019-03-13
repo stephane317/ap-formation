@@ -14,6 +14,7 @@ import { RabbitListPageComponent } from './page/rabbit/rabbit-list-page/rabbit-l
 import { CatCreatePageComponent } from './page/cat/cat-create-page/cat-create-page.component';
 import { CatUpdatePageComponent } from './page/cat/cat-update-page/cat-update-page.component';
 import { CatEditionComponent } from './components/cat-edition/cat-edition.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { CatEditionComponent } from './components/cat-edition/cat-edition.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
