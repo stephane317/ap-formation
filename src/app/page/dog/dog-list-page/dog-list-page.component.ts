@@ -14,7 +14,7 @@ export class DogListPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('--->', this.dataZooSrv.cats);
+    console.log('---> modif git', this.dataZooSrv.cats);
   }
 
 }
