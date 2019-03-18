@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Animal } from 'src/app/interface/animal.interface';
 
 @Component({
   selector: 'app-cat-edition',
@@ -12,6 +13,8 @@ export class CatEditionComponent implements OnInit {
 
   catNameControl: FormControl;
 
+  @Output() saveEvent: EventEmitter<Animal> = new EventEmitter();
+
   constructor(
     private fb: FormBuilder
   ) { }
@@ -22,9 +25,7 @@ export class CatEditionComponent implements OnInit {
     this.listenInputChange();
   }
   initControlName(): any {
-
     this.catNameControl = this.fb.control('');
-
   }
 
   getInput() {
@@ -42,16 +43,17 @@ export class CatEditionComponent implements OnInit {
     })
   }
 
-
-
+  submitForm() {
+    console.log('----> ', this.catForm.value);
+    this.saveEvent.emit(this.catForm.value);
+  }
 
   initForm(): any {
-
     this.catForm = this.fb.group({
       'name': [''],
-      'name1': [''],
-      'name2': [''],
-      'name3': ['']
+      'breed': [''],
+      'talk': [''],
+      'id': ['']
     })
 
   }

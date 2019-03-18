@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Animal } from 'src/app/interface/animal.interface';
+import { DataZooService } from 'src/app/service/zoo/data-zoo.service';
 
 @Component({
   selector: 'app-cat-list-page',
@@ -8,18 +9,15 @@ import { Animal } from 'src/app/interface/animal.interface';
 })
 export class CatListPageComponent implements OnInit {
 
-  cats: Animal[] = [
-    {
-      name: 'cat1',
-      breed: 'ch',
-      talk: 'miaou',
-      id: 1
-    }
-  ]
+  cats: Animal[];
 
-  constructor() { }
+  constructor(
+    private zooSrv: DataZooService
+  ) { }
 
   ngOnInit() {
+    this.cats = this.zooSrv.cats;
+    console.log('----> this.cats', this.cats);
   }
 
 }

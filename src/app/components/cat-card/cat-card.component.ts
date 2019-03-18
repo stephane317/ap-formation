@@ -14,13 +14,9 @@ export class CatCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(' ngOnInit ----> CatCardComponent')
   }
 
   ngOnChanges(changes): void {
-    console.log(' ngOnChanges ----> CatCardComponent');
-    console.log(changes);
-    console.log('CAT', this.cat);
   }
 
   wantToTalk() {

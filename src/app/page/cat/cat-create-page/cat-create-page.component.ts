@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Animal } from 'src/app/interface/animal.interface';
+import { DataZooService } from 'src/app/service/zoo/data-zoo.service';
 
 @Component({
   selector: 'app-cat-create-page',
@@ -7,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatCreatePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private catSrv: DataZooService
+  ) { }
 
   ngOnInit() {
   }
 
-  createCat(data) {
-    console.log('----> cat', data);
+  createCat(newCat: Animal) {
+    console.log('----> cat', newCat);
+    this.catSrv.addCat(newCat);
+    console.log('----> this cats', this.catSrv.cats);
   }
 
 }
