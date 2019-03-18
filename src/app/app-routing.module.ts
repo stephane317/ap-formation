@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: "dog/list", component: DogListPageComponent },
   { path: "cat/list", component: CatListPageComponent },
   { path: "cat/create", component: CatCreatePageComponent },
-  { path: "cat/update/:toto", component: CatUpdatePageComponent },
+  { path: "cat/update/:id", component: CatUpdatePageComponent },
   { path: "rabbit/list", component: RabbitListPageComponent },
   {
     path: 'animals/list',

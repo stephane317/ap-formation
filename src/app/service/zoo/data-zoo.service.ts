@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Animal } from 'src/app/interface/animal.interface';
+import { from } from 'rxjs';
 
 @Injectable({
   providedIn: "root"
@@ -29,6 +30,12 @@ export class DataZooService {
 
   addCat(cat: Animal) {
     this.cats.push(cat);
+  }
+
+  getById(catId: number): Animal {
+    let animalToReturn = this.cats.find(({ id }) => id == catId);
+    console.log('----> animalToReturn', animalToReturn);
+    return animalToReturn;
   }
 
   deleteCat(catId: number) {

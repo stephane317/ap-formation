@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Animal } from 'src/app/interface/animal.interface';
 
@@ -13,6 +13,7 @@ export class CatEditionComponent implements OnInit {
 
   catNameControl: FormControl;
 
+  @Input() animalToUpdate: Animal;
   @Output() saveEvent: EventEmitter<Animal> = new EventEmitter();
 
   constructor(
@@ -26,6 +27,10 @@ export class CatEditionComponent implements OnInit {
   }
   initControlName(): any {
     this.catNameControl = this.fb.control('');
+  }
+
+  ngOnChanges(): void {
+    // this.patchForm();
   }
 
   getInput() {
@@ -48,6 +53,10 @@ export class CatEditionComponent implements OnInit {
     this.saveEvent.emit(this.catForm.value);
   }
 
+  patchForm() {
+    this.catForm.patchValue(this.animalToUpdate);
+  }
+
   initForm(): any {
     this.catForm = this.fb.group({
       'name': [''],
@@ -55,6 +64,9 @@ export class CatEditionComponent implements OnInit {
       'talk': [''],
       'id': ['']
     })
+    if (this.animalToUpdate) {
+      this.patchForm();
+    }
 
   }
 
